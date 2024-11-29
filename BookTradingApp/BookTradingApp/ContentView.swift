@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedMenu: String = "Home"
+    
     var body: some View {
         VStack{
             Spacer()
+            
+            
+            
+            
             HStack {
                 Image(systemName: "house")
                     .imageScale(.large)
                     .padding(30)
+                
                 Image(systemName: "magnifyingglass")
                     .imageScale(.large)
                     .padding(30)
