@@ -11,6 +11,7 @@
 		1CF67B922CFA6CB700CB9CA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */; };
 		1CF67B942CFA6CB800CB9CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */; };
 		1CF67B972CFA6CB800CB9CA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */; };
+		A51996EA2CFA6ECD0078A85C /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51996E92CFA6EC00078A85C /* profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1CF67B9C2CFA6CB900CB9CA5 /* BookTradingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTradingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF67BA62CFA6CB900CB9CA5 /* BookTradingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTradingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A51996E92CFA6EC00078A85C /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */,
 				1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */,
+				A51996E92CFA6EC00078A85C /* profile.swift */,
 				1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */,
 				1CF67B952CFA6CB800CB9CA5 /* Preview Content */,
 			);
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51996EA2CFA6ECD0078A85C /* profile.swift in Sources */,
 				1CF67B922CFA6CB700CB9CA5 /* ContentView.swift in Sources */,
 				1CF67B902CFA6CB700CB9CA5 /* BookTradingAppApp.swift in Sources */,
 			);
