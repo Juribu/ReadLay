@@ -11,9 +11,6 @@
 		1CF67B922CFA6CB700CB9CA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */; };
 		1CF67B942CFA6CB800CB9CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */; };
 		1CF67B972CFA6CB800CB9CA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */; };
-		1CF67BA12CFA6CB900CB9CA5 /* BookTradingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BA02CFA6CB900CB9CA5 /* BookTradingAppTests.swift */; };
-		1CF67BAB2CFA6CB900CB9CA5 /* BookTradingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BAA2CFA6CB900CB9CA5 /* BookTradingAppUITests.swift */; };
-		1CF67BAD2CFA6CB900CB9CA5 /* BookTradingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BAC2CFA6CB900CB9CA5 /* BookTradingAppUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +37,7 @@
 		1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1CF67B9C2CFA6CB900CB9CA5 /* BookTradingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTradingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CF67BA02CFA6CB900CB9CA5 /* BookTradingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradingAppTests.swift; sourceTree = "<group>"; };
 		1CF67BA62CFA6CB900CB9CA5 /* BookTradingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTradingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CF67BAA2CFA6CB900CB9CA5 /* BookTradingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradingAppUITests.swift; sourceTree = "<group>"; };
-		1CF67BAC2CFA6CB900CB9CA5 /* BookTradingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				1CF67B8E2CFA6CB700CB9CA5 /* BookTradingApp */,
-				1CF67B9F2CFA6CB900CB9CA5 /* BookTradingAppTests */,
-				1CF67BA92CFA6CB900CB9CA5 /* BookTradingAppUITests */,
 				1CF67B8D2CFA6CB700CB9CA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,23 +100,6 @@
 				1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		1CF67B9F2CFA6CB900CB9CA5 /* BookTradingAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				1CF67BA02CFA6CB900CB9CA5 /* BookTradingAppTests.swift */,
-			);
-			path = BookTradingAppTests;
-			sourceTree = "<group>";
-		};
-		1CF67BA92CFA6CB900CB9CA5 /* BookTradingAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1CF67BAA2CFA6CB900CB9CA5 /* BookTradingAppUITests.swift */,
-				1CF67BAC2CFA6CB900CB9CA5 /* BookTradingAppUITestsLaunchTests.swift */,
-			);
-			path = BookTradingAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF67BA12CFA6CB900CB9CA5 /* BookTradingAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF67BAB2CFA6CB900CB9CA5 /* BookTradingAppUITests.swift in Sources */,
-				1CF67BAD2CFA6CB900CB9CA5 /* BookTradingAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
