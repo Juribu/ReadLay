@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3761DF2CFBD7B700214816 /* UploadBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3761DE2CFBD7B700214816 /* UploadBookView.swift */; };
 		1CF67B902CFA6CB700CB9CA5 /* BookTradingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */; };
 		1CF67B922CFA6CB700CB9CA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */; };
 		1CF67B942CFA6CB800CB9CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C3761DE2CFBD7B700214816 /* UploadBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBookView.swift; sourceTree = "<group>"; };
 		1CF67B8C2CFA6CB700CB9CA5 /* BookTradingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTradingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradingAppApp.swift; sourceTree = "<group>"; };
 		1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				1CF67BB92CFA71D000CB9CA5 /* HomeView.swift */,
 				1CF67BC02CFA79FD00CB9CA5 /* Model */,
 				A51996F12CFA78F70078A85C /* ProfileView.swift */,
+				1C3761DE2CFBD7B700214816 /* UploadBookView.swift */,
 				A51996FB2CFAA9FB0078A85C /* PfpImageView.swift */,
 				A51996F72CFA97040078A85C /* BookshelfView.swift */,
 				1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF67BBC2CFA71F900CB9CA5 /* BookItemView.swift in Sources */,
+				1C3761DF2CFBD7B700214816 /* UploadBookView.swift in Sources */,
 				1CF67BC22CFA942E00CB9CA5 /* Book.swift in Sources */,
 				A51996FC2CFAAA000078A85C /* PfpImageView.swift in Sources */,
 				1CF67BBA2CFA71D000CB9CA5 /* HomeView.swift in Sources */,

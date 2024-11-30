@@ -14,6 +14,12 @@ let username = "o"
 struct ProfileView: View {
     @State var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
+    
+    @State private var who: Bool
+    
+    init(who: Bool){
+        self.who = who
+    }
 
     var body: some View {
         NavigationStack{
@@ -40,11 +46,28 @@ struct ProfileView: View {
                         
                         Spacer().frame(height: 20)
                         
-                        showNameEmail
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .padding(.top, 10)
+                        
+                        HStack{
+                        
+                            NavigationLink{
+                                UploadBookView()
+                            } label: {
+                                Image(systemName: "plus")
+                                    .padding(.leading, 46)
+                                    .foregroundColor(.black)
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            }
+        
+                            showNameEmail
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding(.top, 10)
+                                .offset(x: -43)
+                            
+                                
+                        }
                         
                         HomeView(books: Book.DummyBooks.filter { $0.username == username })
+                            .background(ignoresSafeAreaEdges: .horizontal)
                     }
             }
             .sheet(isPresented: $isImagePickerPresented) {
@@ -131,7 +154,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 #Preview {
-    ProfileView()
+    ProfileView(who: true)
 }
 
 //Image(systemName: "star.fill")  // Using SF Symbol

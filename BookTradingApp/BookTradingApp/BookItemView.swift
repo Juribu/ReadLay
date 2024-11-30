@@ -20,7 +20,8 @@ struct BookItemView: View {
         NavigationStack{
             ZStack{
                 
-                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1.0)).ignoresSafeArea()
+//                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1.0)).ignoresSafeArea()
+                Color(UIColor(.white))
                 
                 ScrollView{
                     VStack(alignment: .leading){
@@ -36,6 +37,7 @@ struct BookItemView: View {
                             Spacer()
                             
                             NavigationLink{
+                                ProfileView(who: false)
                             }label: {
                                 displaySellerPfp
                             }

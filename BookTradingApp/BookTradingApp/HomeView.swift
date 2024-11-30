@@ -19,7 +19,6 @@ struct HomeView: View {
             ZStack {
                 
 //                Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)).ignoresSafeArea()
-                Color(.white).ignoresSafeArea()
                 
                 VStack{
                     
@@ -27,7 +26,7 @@ struct HomeView: View {
                         bookInfoRow(book)
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
-                            .listRowBackground(Color.white)
+            
 //                            .listRowBackground(Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)))
                     }
                     .scrollContentBackground(.hidden)

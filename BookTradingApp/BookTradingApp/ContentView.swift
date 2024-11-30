@@ -18,10 +18,13 @@ struct ContentView: View {
         
         NavigationStack{
             ZStack{
-//                Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)).ignoresSafeArea()
                 VStack{
 //                    Spacer()
                     contentView
+                        .toolbarBackground(
+                                Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)), for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
+                        
                     
                     menuView
                         .frame(maxWidth: .infinity, maxHeight: 84)
@@ -47,7 +50,7 @@ struct ContentView: View {
             Text(genre)
                 .padding(.horizontal, 18)
                 .foregroundColor(.black)
-                .background(Color.white)
+                .background(Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)))
                 .cornerRadius(12)
                 .bold(selectedCategory == genre ? true : false)
         }
@@ -57,15 +60,17 @@ struct ContentView: View {
         VStack{
             switch selectedMenu {
             case "home":
+                
                 genreView
+                    .padding(.top, 16)
                 HomeView(books: books)
-                    .navigationBarTitle("Home", displayMode: .inline)
+                    .navigationTitle("Home")
             case "shelf":
                 BookshelfView(books: books)
-                    .navigationBarTitle("My Bookshelf", displayMode: .inline)
+                    .navigationTitle("Shelf")
             case "profile":
-                ProfileView()
-                    .navigationBarTitle("Profile", displayMode: .inline)
+                ProfileView(who: true)
+                    .navigationTitle("Profile")
             default:
                 HomeView(books: books)
             }
