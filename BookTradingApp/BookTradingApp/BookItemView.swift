@@ -7,12 +7,8 @@
 
 import Foundation
 
-<<<<<<< Updated upstream
 dafadsfasdf
 
+gbnhyttmj
 
 dasfsdf
-
-=======
-gbnhyttmj
->>>>>>> Stashed changes
