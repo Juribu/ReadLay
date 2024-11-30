@@ -15,11 +15,14 @@ struct Book: Hashable {
     let image: String
     let quote: String
     let genre: String
+    let username: String
+    
 //    let time: Date
 }
 
 extension Book {
     static let DummyBooks = [
+<<<<<<< Updated upstream:BookTradingApp/BookTradingApp/Model/Book.swift
         Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "aldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenalden", genre: "Fiction"),
         Book(id: "12", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction"),
         Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction"),
@@ -28,5 +31,15 @@ extension Book {
         Book(id: "12", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "ab Fiction"),
         Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction"),
         Book(id: "12", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction")
+=======
+        Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction", username: "o"),
+        Book(id: "2", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction", username: "o"),
+        Book(id: "3", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction", username: "o"),
+        Book(id: "4", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction", username: "o"),
+        Book(id: "5", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction", username: "o"),
+        Book(id: "6", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "ab Fiction", username: "o"),
+        Book(id: "7", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction", username: "v"),
+        Book(id: "8", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction", username: "v")
+>>>>>>> Stashed changes:BookTradingApp/BookTradingApp/Book.swift
     ]
 }
