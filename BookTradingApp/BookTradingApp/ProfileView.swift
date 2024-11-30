@@ -9,16 +9,7 @@ import SwiftUI
 
 let name = "Oshin"
 let email = "omr6@cornell.edu"
-<<<<<<< Updated upstream
-
-let items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8"]
-
-let columns = [
-    GridItem(.flexible()) // Flexible row height
-]
-=======
 let username = "o"
->>>>>>> Stashed changes
 
 struct ProfileView: View {
     @State private var selectedImage: UIImage?
@@ -68,40 +59,9 @@ struct ProfileView: View {
                         ImagePicker(selectedImage: self.$selectedImage)
                     }
         
-//        HomeView(Book.DummyBooks.filter { $0.username == username })
-    List(Book.DummyBooks.filter { $0.username == username }, id: \.self) { book in bookInfoRow(book)
-        }
+        HomeView(books: Book.DummyBooks.filter { $0.username == username })
     }
     
-    private func bookInfoRow(_ book: Book) -> some View {
-        VStack{
-            
-            HStack {
-                Image(book.image)
-                    .resizable()
-                    .frame(width: 100, height: 150)
-                
-                VStack(alignment: .leading){
-                    Text(book.title)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    Text(book.author)
-                        .font(.subheadline)
-                    
-                    Text(book.description)
-                        .font(.footnote)
-                    
-                    Text(book.genre)
-                        .font(.custom("SFUIText", fixedSize: 10))
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        }
-        
-    }
-    
-    //private func
 }
 
 struct ImagePicker: UIViewControllerRepresentable {

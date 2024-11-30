@@ -14,7 +14,6 @@ struct ContentView: View {
         VStack{
             Spacer()
             
-<<<<<<< Updated upstream
             contentView
             
             menuView
@@ -38,22 +37,6 @@ struct ContentView: View {
                 HomeView(books: Book.DummyBooks)
             default:
                 HomeView(books: Book.DummyBooks)
-=======
-            HStack {
-                Image(systemName: "house")
-                    .imageScale(.large)
-                    .padding(30)
-                
-                Image(systemName: "magnifyingglass")
-                    .imageScale(.large)
-                    .padding(30)
-                Image(systemName: "book")
-                    .imageScale(.large)
-                    .padding(30)
-                Image(systemName: "person")
-                    .imageScale(.large)
-                    .padding(30)
->>>>>>> Stashed changes
             }
         }
     }
