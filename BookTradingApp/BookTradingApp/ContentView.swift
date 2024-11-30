@@ -18,18 +18,14 @@ struct ContentView: View {
         
         NavigationStack{
             ZStack{
-                Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)).ignoresSafeArea()
+//                Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)).ignoresSafeArea()
                 VStack{
-                    
-                    
-                    Spacer()
+//                    Spacer()
                     contentView
                     
                     menuView
                         .frame(maxWidth: .infinity, maxHeight: 84)
-                        .background(Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)))
-//                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-//                        .shadow(radius: 5)
+                        .background(Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)))
                     
                 }
                 .edgesIgnoringSafeArea(.bottom)

@@ -18,7 +18,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack{
                 ZStack {
-                    Color(red: 247/255, green: 243/255, blue: 236/255).ignoresSafeArea()
+                    Color(red: 248/255, green: 241/255, blue: 229/255).ignoresSafeArea()
                     
                     VStack {
                         showUserHandler
