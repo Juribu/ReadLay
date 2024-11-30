@@ -12,35 +12,39 @@ struct BookshelfView: View {
     }
     
     var body: some View {
-        NavigationView{
-            VStack {
-
-                GeometryReader { geometry in
+            NavigationView{
+                ZStack{
+                    Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)).ignoresSafeArea()
                     VStack {
-                        ForEach(0..<numberOfRows, id: \.self) { row in
+                        GeometryReader { geometry in
                             VStack {
-                                HStack(spacing: 20) {
-                                    ForEach(0..<3) { index in
-                                        let bookIndex = row * 3 + index
-                                        if bookIndex < books.count {
-                                            bookInfoRow(book: books[bookIndex], geometry: geometry)
+                                ForEach(0..<numberOfRows, id: \.self) { row in
+                                    VStack {
+                                        Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)).ignoresSafeArea()
+                                        
+                                        HStack(spacing: 20) {
+                                            
+                                            ForEach(0..<3) { index in
+                                                let bookIndex = row * 3 + index
+                                                if bookIndex < books.count {
+                                                    bookInfoRow(book: books[bookIndex], geometry: geometry)
+                                                }
+                                            }
+                                        }
+                                        .padding(.bottom, 10)
+                                        if row != numberOfRows {
+                                            Rectangle()
+                                                .fill(Color.brown.opacity(1))
+                                                .frame(height: 15)
                                         }
                                     }
-                                }
-                                .padding(.bottom, 10)
-                                if row != numberOfRows {
-                                    Rectangle()
-                                        .fill(Color.brown.opacity(1))
-                                        .frame(height: 15)
                                 }
                             }
                         }
                     }
-                }
             }
+            
         }
-        .navigationBarTitle("My Bookshelf", displayMode: .inline)
-        
     }
     
     private func bookInfoRow(book: Book, geometry: GeometryProxy) -> some View {

@@ -27,7 +27,7 @@ struct ContentView: View {
                     
                     menuView
                         .frame(maxWidth: .infinity, maxHeight: 84)
-                        .background(Color(UIColor(red: 230/255, green: 255/255, blue: 210/255, alpha: 1.0)))
+                        .background(Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)))
 //                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
 //                        .shadow(radius: 5)
                     
@@ -63,10 +63,13 @@ struct ContentView: View {
             case "home":
                 genreView
                 HomeView(books: books)
+                    .navigationBarTitle("Home", displayMode: .inline)
             case "shelf":
                 BookshelfView(books: books)
+                    .navigationBarTitle("My Bookshelf", displayMode: .inline)
             case "profile":
                 ProfileView()
+                    .navigationBarTitle("Profile", displayMode: .inline)
             default:
                 HomeView(books: books)
             }

@@ -31,7 +31,6 @@ struct HomeView: View {
                     .scrollContentBackground(.hidden)
                 }
             }
-            .navigationBarTitle("Home", displayMode: .inline)
     }
     
 

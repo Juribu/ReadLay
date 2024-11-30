@@ -17,75 +17,74 @@ struct ProfileView: View {
 
     var body: some View {
         NavigationStack{
-            GeometryReader { geometry in
                 ZStack {
-                    Color(red: 188/255, green: 184/255, blue: 138/255).edgesIgnoringSafeArea(.all)
+                    Color(red: 247/255, green: 243/255, blue: 236/255).ignoresSafeArea()
                     
                     VStack {
-                        Text("@" + String(username))
-                            .position(x: geometry.size.width / 2, y: 100)
-                            .foregroundColor(.white)
-                            .bold()
-                            .font(.title2)
-                        
+                        showUserHandler
                         
                         ZStack {
-                            if let selectedImage = selectedImage {
-                                Image(uiImage: selectedImage)
-                                    .resizable()
-                                    .frame(width: 150, height: 150)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                                    .shadow(radius: 10)
-                            } else {
-                                Image("profile")
-                                    .resizable()
-                                    .frame(width: 150, height: 150)
-                            }
+                            showtPfpImage()
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
                             
-                            Button(action: {
+                            Button{
                                 self.isImagePickerPresented = true
-                            }) {
+                            } label: {
                                 Image("EditButton")
                                     .resizable()
                                     .frame(width: 30, height: 30)
-                                    .position(x: geometry.size.width - 160, y: 130)
                             }
+                            .offset(x: 55, y: 60)
                         }
                         
                         Spacer().frame(height: 20)
                         
-                        VStack {
-                            Text(name)
-                                .font(.title)
-                                .foregroundColor(.white)
-                                .bold()
-                            
-                            Text(email)
-                                .font(.body)
-                                .foregroundColor(.white)
-                                .bold()
-                        }
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top, 10)
+                        showNameEmail
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 10)
+                        
+                        HomeView(books: Book.DummyBooks.filter { $0.username == username })
                     }
-                    .padding(.bottom, 50)
-                    
-                    VStack {
-                        Spacer().frame(height: 175)
-                        Spacer()
-                    }
-                }
             }
-            .edgesIgnoringSafeArea(.all)
-            
             .sheet(isPresented: $isImagePickerPresented) {
                 ImagePicker(selectedImage: self.$selectedImage)
             }
-            
-            HomeView(books: Book.DummyBooks.filter { $0.username == username })
         }
-        .navigationBarTitle("Profile", displayMode: .inline)
+    }
+    
+    private func showtPfpImage() -> some View {
+        if let selectedImage = selectedImage {
+            Image(uiImage: selectedImage)
+                .resizable()
+                .frame(width: 150, height: 150)
+        } else {
+            Image("profile")
+                .frame(width: 150, height: 150)
+        }
+    }
+    
+    
+    
+    private var showUserHandler: some View {
+        Text("@" + String(username))
+            .foregroundColor(.black)
+            .bold()
+            .font(.title2)
+    }
+    
+    private var showNameEmail: some View {
+        VStack {
+            Text(name)
+                .font(.title)
+                .foregroundColor(.black)
+                .bold()
+            
+            Text(email)
+                .font(.body)
+                .foregroundColor(.black)
+                .bold()
+        }
     }
     
 }
