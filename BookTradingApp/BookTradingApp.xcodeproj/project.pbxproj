@@ -14,7 +14,6 @@
 		1CF67BBA2CFA71D000CB9CA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BB92CFA71D000CB9CA5 /* HomeView.swift */; };
 		1CF67BBC2CFA71F900CB9CA5 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */; };
 		1CF67BC22CFA942E00CB9CA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BC12CFA942E00CB9CA5 /* Book.swift */; };
-		1CF67BC42CFA962900CB9CA5 /* how.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BC32CFA962900CB9CA5 /* how.swift */; };
 		A51996F22CFA78FA0078A85C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51996F12CFA78F70078A85C /* ProfileView.swift */; };
 		A51996F42CFA7A550078A85C /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51996F32CFA7A530078A85C /* Owner.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		1CF67BB92CFA71D000CB9CA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
 		1CF67BC12CFA942E00CB9CA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		1CF67BC32CFA962900CB9CA5 /* how.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = how.swift; sourceTree = "<group>"; };
 		A51996F12CFA78F70078A85C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A51996F32CFA7A530078A85C /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +103,6 @@
 				A51996F12CFA78F70078A85C /* ProfileView.swift */,
 				A51996F32CFA7A530078A85C /* Owner.swift */,
 				1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */,
-				1CF67BC32CFA962900CB9CA5 /* how.swift */,
 				1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */,
 				1CF67B952CFA6CB800CB9CA5 /* Preview Content */,
 			);
@@ -260,7 +257,6 @@
 			files = (
 				1CF67BBC2CFA71F900CB9CA5 /* BookItemView.swift in Sources */,
 				A51996F42CFA7A550078A85C /* Owner.swift in Sources */,
-				1CF67BC42CFA962900CB9CA5 /* how.swift in Sources */,
 				1CF67BC22CFA942E00CB9CA5 /* Book.swift in Sources */,
 				1CF67BBA2CFA71D000CB9CA5 /* HomeView.swift in Sources */,
 				1CF67B922CFA6CB700CB9CA5 /* ContentView.swift in Sources */,
