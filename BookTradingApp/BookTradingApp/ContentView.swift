@@ -9,34 +9,66 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedMenu: String = "home"
+    @State private var selectedCategory: String = "All"
+    @State private var likes: [String] = UserDefaults.standard.array(forKey: "likes") as? [String] ?? []
+    
+    let books: [Book] = Book.DummyBooks
     
     var body: some View {
-        VStack{
-            Spacer()
-            
-            contentView
-            
-            menuView
-                .frame(maxWidth: .infinity, maxHeight: 84)
-                .background(Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)))
-//                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                .shadow(radius: 5)
         
+        NavigationStack{
+            ZStack{
+                Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)).ignoresSafeArea()
+                VStack{
+                    
+                    
+                    Spacer()
+                    genreView
+                    contentView
+                    
+                    menuView
+                        .frame(maxWidth: .infinity, maxHeight: 84)
+                        .background(Color(UIColor(red: 230/255, green: 255/255, blue: 210/255, alpha: 1.0)))
+//                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+//                        .shadow(radius: 5)
+                    
+                }
+                .edgesIgnoringSafeArea(.bottom)
+            }
         }
-        .edgesIgnoringSafeArea(.bottom)
-        
     }
+
+    private var genreView: some View{
+        HStack(spacing: 18){
+            genreButton(genre: "All")
+            genreButton(genre: "Sci-Fi")
+        }
+    }
+    
+    private func genreButton(genre: String) -> some View{
+        Button{
+            selectedCategory = genre
+        } label: {
+            Text(genre)
+                .padding(.horizontal, 18)
+                .foregroundColor(.black)
+                .background(Color.white)
+                .cornerRadius(12)
+                .bold(selectedCategory == genre ? true : false)
+        }
+    }
+    
     private var contentView: some View{
         VStack{
             switch selectedMenu {
             case "home":
-                HomeView(books: Book.DummyBooks)
+                HomeView(books: books)
             case "shelf":
-                HomeView(books: Book.DummyBooks)
+                BookshelfView(books: books)
             case "profile":
                 ProfileView()
             default:
-                HomeView(books: Book.DummyBooks)
+                HomeView(books: books)
             }
         }
     }

@@ -14,75 +14,77 @@ let username = "o"
 struct ProfileView: View {
     @State var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
-    
+
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Color(red: 188/255, green: 184/255, blue: 138/255).edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    Text("@" + String(username))
-                        .position(x: geometry.size.width / 2, y: 100)
-                        .foregroundColor(.white)
-                        .bold()
-                        .font(.title2)
-                    
-                    
-                    ZStack {
-                        if let selectedImage = selectedImage {
-                            Image(uiImage: selectedImage)
-                                .resizable()
-                                .frame(width: 150, height: 150)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                                .shadow(radius: 10)
-                        } else {
-                            Image("profile")
-                                .resizable()
-                                .frame(width: 150, height: 150)
-                        }
-                        
-                        Button(action: {
-                            self.isImagePickerPresented = true
-                        }) {
-                            Image("EditButton")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .position(x: geometry.size.width - 160, y: 130)
-                        }
-                    }
-                    
-                    Spacer().frame(height: 20)
+        NavigationStack{
+            GeometryReader { geometry in
+                ZStack {
+                    Color(red: 188/255, green: 184/255, blue: 138/255).edgesIgnoringSafeArea(.all)
                     
                     VStack {
-                        Text(name)
-                            .font(.title)
+                        Text("@" + String(username))
+                            .position(x: geometry.size.width / 2, y: 100)
                             .foregroundColor(.white)
                             .bold()
+                            .font(.title2)
                         
-                        Text(email)
-                            .font(.body)
-                            .foregroundColor(.white)
-                            .bold()
+                        
+                        ZStack {
+                            if let selectedImage = selectedImage {
+                                Image(uiImage: selectedImage)
+                                    .resizable()
+                                    .frame(width: 150, height: 150)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                                    .shadow(radius: 10)
+                            } else {
+                                Image("profile")
+                                    .resizable()
+                                    .frame(width: 150, height: 150)
+                            }
+                            
+                            Button(action: {
+                                self.isImagePickerPresented = true
+                            }) {
+                                Image("EditButton")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .position(x: geometry.size.width - 160, y: 130)
+                            }
+                        }
+                        
+                        Spacer().frame(height: 20)
+                        
+                        VStack {
+                            Text(name)
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .bold()
+                            
+                            Text(email)
+                                .font(.body)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.top, 10)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.top, 10)
-                }
-                .padding(.bottom, 50)
-                
-                VStack {
-                    Spacer().frame(height: 175)
-                    Spacer()
+                    .padding(.bottom, 50)
+                    
+                    VStack {
+                        Spacer().frame(height: 175)
+                        Spacer()
+                    }
                 }
             }
+            .edgesIgnoringSafeArea(.all)
+            
+            .sheet(isPresented: $isImagePickerPresented) {
+                ImagePicker(selectedImage: self.$selectedImage)
+            }
+            
+            HomeView(books: Book.DummyBooks.filter { $0.username == username })
         }
-        .edgesIgnoringSafeArea(.all)
-
-        .sheet(isPresented: $isImagePickerPresented) {
-                        ImagePicker(selectedImage: self.$selectedImage)
-                    }
-        
-        HomeView(books: Book.DummyBooks.filter { $0.username == username })
     }
     
 }

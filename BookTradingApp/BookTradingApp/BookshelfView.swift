@@ -14,11 +14,7 @@ struct BookshelfView: View {
     var body: some View {
         NavigationView{
             VStack {
-                Text("My Bookshelf")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-                
+
                 GeometryReader { geometry in
                     VStack {
                         ForEach(0..<numberOfRows, id: \.self) { row in
