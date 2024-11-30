@@ -20,7 +20,7 @@ struct Book: Hashable {
 
 extension Book {
     static let DummyBooks = [
-        Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction"),
+        Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "aldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenaldenalden", genre: "Fiction"),
         Book(id: "12", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction"),
         Book(id: "1", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "Fiction"),
         Book(id: "12", title: "HarryPotter", author: "Jk rowling", description: "good book!", image: "harryPotter", quote: "alden", genre: "a Fiction"),

@@ -97,8 +97,8 @@
 				1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */,
 				1CF67B912CFA6CB700CB9CA5 /* ContentView.swift */,
 				1CF67BB92CFA71D000CB9CA5 /* HomeView.swift */,
+				1CF67BC02CFA79FD00CB9CA5 /* Model */,
 				A51996F12CFA78F70078A85C /* ProfileView.swift */,
-				1CF67BBD2CFA729400CB9CA5 /* Book.swift */,
 				1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */,
 				1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */,
 				1CF67B952CFA6CB800CB9CA5 /* Preview Content */,
@@ -112,6 +112,14 @@
 				1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1CF67BC02CFA79FD00CB9CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CF67BBD2CFA729400CB9CA5 /* Book.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
