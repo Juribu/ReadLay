@@ -10,6 +10,30 @@ import SwiftUI
 struct UploadBookView : View {
     
     var body: some View{
-        Text("hi")
+        
+        NavigationStack{
+            VStack{
+                Image(systemName: "heart")
+                Text("hi")
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Text("Post")
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
+}
+
+#Preview {
+    UploadBookView()
 }
