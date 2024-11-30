@@ -85,6 +85,7 @@ struct ProfileView: View {
             
             HomeView(books: Book.DummyBooks.filter { $0.username == username })
         }
+        .navigationBarTitle("Profile", displayMode: .inline)
     }
     
 }

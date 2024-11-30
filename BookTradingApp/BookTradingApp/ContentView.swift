@@ -23,7 +23,6 @@ struct ContentView: View {
                     
                     
                     Spacer()
-                    genreView
                     contentView
                     
                     menuView
@@ -62,6 +61,7 @@ struct ContentView: View {
         VStack{
             switch selectedMenu {
             case "home":
+                genreView
                 HomeView(books: books)
             case "shelf":
                 BookshelfView(books: books)
