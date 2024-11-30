@@ -12,29 +12,34 @@ let email = "omr6@cornell.edu"
 let username = "o"
 
 struct ProfileView: View {
-    @State private var selectedImage: UIImage?
+    @State var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack{
-                Color(.blue).edgesIgnoringSafeArea(.all)
-                VStack{
-                    Text(String("@" + String(username)))
+            ZStack {
+                Color(red: 188/255, green: 184/255, blue: 138/255).edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    Text("@" + String(username))
                         .position(x: geometry.size.width / 2, y: 100)
-                    ZStack{
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title2)
+                    
+                    
+                    ZStack {
                         if let selectedImage = selectedImage {
-                            Image(uiImage: selectedImage) // Display selected image
+                            Image(uiImage: selectedImage)
                                 .resizable()
                                 .frame(width: 150, height: 150)
-                                .clipShape(Circle()) // Circular profile image
-                                .overlay(Circle().stroke(Color.white, lineWidth: 4)) // Border
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white, lineWidth: 4))
                                 .shadow(radius: 10)
                         } else {
                             Image("profile")
                                 .resizable()
                                 .frame(width: 150, height: 150)
-                                .position(x: geometry.size.width / 2, y: 0)
                         }
                         
                         Button(action: {
@@ -43,18 +48,36 @@ struct ProfileView: View {
                             Image("EditButton")
                                 .resizable()
                                 .frame(width: 30, height: 30)
-                                .position(x: 240, y: 45)
+                                .position(x: geometry.size.width - 160, y: 130)
                         }
                     }
-                    Text(name)
-                        .font(.title2)
-                    Text(email)
-                        .font(.body)
+                    
+                    Spacer().frame(height: 20)
+                    
+                    VStack {
+                        Text(name)
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                        Text(email)
+                            .font(.body)
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top, 10)
                 }
                 .padding(.bottom, 50)
                 
+                VStack {
+                    Spacer().frame(height: 175)
+                    Spacer()
+                }
             }
-        }.edgesIgnoringSafeArea(.all)
+        }
+        .edgesIgnoringSafeArea(.all)
+
         .sheet(isPresented: $isImagePickerPresented) {
                         ImagePicker(selectedImage: self.$selectedImage)
                     }

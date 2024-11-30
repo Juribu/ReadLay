@@ -19,7 +19,7 @@ struct ContentView: View {
             menuView
                 .frame(maxWidth: .infinity, maxHeight: 84)
                 .background(Color(UIColor(red: 247/255, green: 243/255, blue: 236/255, alpha: 1.0)))
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+//                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 .shadow(radius: 5)
         
         }
@@ -34,7 +34,7 @@ struct ContentView: View {
             case "shelf":
                 HomeView(books: Book.DummyBooks)
             case "profile":
-                HomeView(books: Book.DummyBooks)
+                ProfileView()
             default:
                 HomeView(books: Book.DummyBooks)
             }
