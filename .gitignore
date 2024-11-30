@@ -1,5 +1,6 @@
 *.DS_Store
 *.xcuserstate
+.xcuserdatad
 .build/
 xcshareddata/
 xcuserdata/
