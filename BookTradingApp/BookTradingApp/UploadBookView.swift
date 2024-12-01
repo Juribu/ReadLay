@@ -23,7 +23,6 @@ struct UploadBookView: View {
                     if let selectedImage = selectedImage {
                         Image(uiImage: selectedImage)
                             .resizable()
-                            .scaledToFill()
                             .frame(height: 460)
                             .padding(.horizontal)
                             .clipShape(RoundedRectangle(cornerRadius: 30))
