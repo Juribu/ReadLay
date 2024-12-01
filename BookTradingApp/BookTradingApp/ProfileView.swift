@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  BookTradingApp
 //
-//  Created by Rex Peter on 11/29/24.
+//  Created by Oshin Rex on 11/29/24.
 //
 
 import SwiftUI
@@ -143,11 +143,11 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let image = info[.originalImage] as? UIImage {
                 parent.selectedImage = image // Set the selected image
             }
-            picker.dismiss(animated: true, completion: nil) // Dismiss the picker
+            picker.dismiss(animated: true, completion: nil)
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true, completion: nil) // Dismiss the picker if canceled
+            picker.dismiss(animated: true, completion: nil)
         }
     }
 }

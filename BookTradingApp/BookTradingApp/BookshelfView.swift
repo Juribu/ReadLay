@@ -1,3 +1,10 @@
+//
+//  BookshelfView.swift
+//  BookTradingApp
+//
+//  Created by Oshin Rex on 11/29/24.
+//
+
 import SwiftUI
 
 struct BookshelfView: View {
