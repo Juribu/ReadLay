@@ -18,16 +18,25 @@ struct DiscoverView: View {
     ]
     
     var body: some View {
+        VStack{
+            Spacer()
+            
         ZStack {
-                ForEach(cards.indices, id: \.self) { index in
-                    if index >= self.currentIndex {
-                        CardView(card: self.cards[index], currentIndex: self.$currentIndex)
-                            .zIndex(Double(cards.count - index))
-                    }
+            ForEach(cards.indices, id: \.self) { index in
+                if index >= self.currentIndex {
+                    CardView(card: self.cards[index], currentIndex: self.$currentIndex)
+                        .zIndex(Double(cards.count - index))
+                }
+                else {
+                    Text("no cards left")
                 }
             }
         }
+            
+            Spacer()
+        }
     }
+}
 
 struct CardView: View {
     var card: String
@@ -42,7 +51,7 @@ struct CardView: View {
                 .frame(width: 300, height: 400)
                 .background(Color.white)
                 .cornerRadius(20)
-                .shadow(radius: 10)
+                .shadow(radius: 2)
         }
         .offset(x: offset.width, y: offset.height)
         .gesture(

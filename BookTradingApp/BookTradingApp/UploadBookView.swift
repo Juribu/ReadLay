@@ -23,7 +23,6 @@ struct UploadBookView: View {
                     if let selectedImage = selectedImage {
                         Image(uiImage: selectedImage)
                             .resizable()
-                            .frame(height: 460)
                             .padding(.horizontal)
                             .clipShape(RoundedRectangle(cornerRadius: 30))
                             .clipped()
@@ -32,7 +31,6 @@ struct UploadBookView: View {
                         RoundedRectangle(cornerRadius: 30)
                             .fill(Color(red: 0.8, green: 0.8, blue: 0.8))
                             .padding(.horizontal)
-                            .frame(height: 460)
                     }
                     Button {
                         isImagePickerPresented = true
@@ -41,7 +39,7 @@ struct UploadBookView: View {
                             .padding(10)
                             .background(Color.white)
                             .cornerRadius(10)
-                            .shadow(radius: 5)
+                            .shadow(radius: 2)
                             .foregroundColor(.black)
                     }
                 }
@@ -51,7 +49,7 @@ struct UploadBookView: View {
                     .padding()
                     .background(Color.white)
                     .cornerRadius(8)
-                    .shadow(radius: 5)
+                    .shadow(radius: 2)
                     .padding(.horizontal)
                 
                 TextField("Add Author", text: $author)
@@ -59,7 +57,7 @@ struct UploadBookView: View {
                     .padding()
                     .background(Color.white)
                     .cornerRadius(8)
-                    .shadow(radius: 5)
+                    .shadow(radius: 2)
                     .padding(.horizontal)
                 
                 ZStack(alignment: .topLeading) {
@@ -68,7 +66,7 @@ struct UploadBookView: View {
                         .frame(height: 70)
                         .background(Color.white)
                         .cornerRadius(8)
-                        .shadow(radius: 5)
+                        .shadow(radius: 2)
                         .padding(.horizontal)
                     
                     if description.isEmpty {
@@ -86,7 +84,7 @@ struct UploadBookView: View {
                         .frame(height: 70)
                         .background(Color.white)
                         .cornerRadius(8)
-                        .shadow(radius: 5)
+                        .shadow(radius: 2)
                         .padding(.horizontal)
                     
                     if quote.isEmpty {

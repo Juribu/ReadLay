@@ -17,74 +17,76 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack{
-            ZStack{
-                VStack{
-//                    Spacer()
-                    contentView
-                        .toolbarBackground(
-                                Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)), for: .navigationBar)
-                        .toolbarBackground(.visible, for: .navigationBar)
-                        
-                    
-                    menuView
-                        .frame(maxWidth: .infinity, maxHeight: 84)
-                        .background(Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)))
-                    
-                }
-                .edgesIgnoringSafeArea(.bottom)
+            VStack(spacing:0){
+                contentView
+                menuView
+                    .background(Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)))
+                
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 
-    private var genreView: some View{
-        HStack(spacing: 18){
-            genreButton(genre: "All")
-            genreButton(genre: "Sci-Fi")
-        }
-    }
-    
-    private func genreButton(genre: String) -> some View{
-        Button{
-            selectedCategory = genre
-        } label: {
-            Text(genre)
-                .padding(.horizontal, 18)
-                .foregroundColor(.black)
-                .background(Color(UIColor(red: 243/255, green: 230/255, blue: 209/255, alpha: 1.0)))
-                .cornerRadius(12)
-                .bold(selectedCategory == genre ? true : false)
-        }
-    }
     
     private var contentView: some View{
         VStack{
             switch selectedMenu {
             case "home":
+                HomeView(books: books, home: true)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("Home")
+                                .font(.title)
+                                .bold()
+                        }
+                    }
                 
-                genreView
-                    .padding(.top, 16)
-                HomeView(books: books)
-                    .navigationTitle("Home")
             case "shelf":
                 BookshelfView(books: books)
-                    .navigationTitle("Shelf")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("Bookshelf")
+                                .font(.title)
+                                .bold()
+                        }
+                    }
+                
             case "profile":
                 ProfileView(who: true)
-                    .navigationTitle("Profile")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("Profile")
+                                .font(.title)
+                                .bold()
+                        }
+                    }
+                
+            case "discover":
+                DiscoverView()
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("Discover")
+                                .font(.title)
+                                .bold()
+                        }
+                    }
             default:
-                HomeView(books: books)
+                HomeView(books: books, home: true)
             }
         }
     }
     private var menuView: some View{
         HStack {
+            Spacer()
             menuButton(icon: "house", menu: "home")
+            Spacer()
+            menuButton(icon: "magnifyingglass", menu: "discover")
+            Spacer()
             menuButton(icon: "book", menu: "shelf")
+            Spacer()
             menuButton(icon: "person", menu: "profile")
-//            Image(systemName: "magnifyingglass")
-//                .imageScale(.large)
-//                .padding(30)
         }
+        .frame(height: 64)
     }
     
     private func menuButton(icon: String, menu: String) -> some View{

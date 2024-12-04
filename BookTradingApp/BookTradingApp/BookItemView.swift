@@ -9,8 +9,10 @@ import SwiftUI
 
 struct BookItemView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     let book: Book
-    @State private var likes: [String] = UserDefaults.standard.array(forKey: "likes") as? [String] ?? []
+    @State private var likes: [String] = []
     
     init(book: Book) {
         self.book = book
@@ -20,8 +22,8 @@ struct BookItemView: View {
         NavigationStack{
             ZStack{
                 
-//                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1.0)).ignoresSafeArea()
-                Color(UIColor(.white))
+                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)).ignoresSafeArea()
+//                Color(UIColor(.white))
                 
                 ScrollView{
                     VStack(alignment: .leading){
@@ -47,6 +49,7 @@ struct BookItemView: View {
                     .padding(42)
                 }
             }
+            }
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button{
@@ -58,7 +61,21 @@ struct BookItemView: View {
                             .foregroundColor(.black)
                     }
                 }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.black)
+                    }
+                }
+                
+                
             }
+            .navigationBarBackButtonHidden()
+            .onAppear{
+                likes = UserDefaults.standard.array(forKey: "likes") as? [String] ?? []
         }
     }
     

@@ -12,6 +12,7 @@ let email = "omr6@cornell.edu"
 let username = "o"
 
 struct ProfileView: View {
+    @Environment(\.dismiss) var dismiss
     @State var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     
@@ -23,56 +24,68 @@ struct ProfileView: View {
 
     var body: some View {
         NavigationStack{
+            
+            VStack {
+                showUserHandler
+                
                 ZStack {
-                    Color(red: 248/255, green: 241/255, blue: 229/255).ignoresSafeArea()
+                    showtPfpImage()
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
                     
-                    VStack {
-                        showUserHandler
-                        
-                        ZStack {
-                            showtPfpImage()
-                                .clipShape(Circle())
-                                .shadow(radius: 10)
-                            
-                            Button{
-                                self.isImagePickerPresented = true
-                            } label: {
-                                Image("EditButton")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                            }
-                            .offset(x: 55, y: 60)
-                        }
-                        
-                        Spacer().frame(height: 20)
-                        
-                        
-                        HStack{
-                        
-                            NavigationLink{
-                                UploadBookView()
-                            } label: {
-                                Image(systemName: "plus")
-                                    .padding(.leading, 46)
-                                    .foregroundColor(.black)
-                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            }
-        
-                            showNameEmail
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.top, 10)
-                                .offset(x: -43)
-                            
-                                
-                        }
-                        
-                        HomeView(books: Book.DummyBooks.filter { $0.username == username })
-                            .background(ignoresSafeAreaEdges: .horizontal)
+                    Button{
+                        self.isImagePickerPresented = true
+                    } label: {
+                        Image("EditButton")
+                            .resizable()
+                            .frame(width: 30, height: 30)
                     }
+                    .offset(x: 55, y: 60)
+                }
+                
+                Spacer().frame(height: 20)
+                
+                
+                HStack{
+                    
+                    NavigationLink{
+                        UploadBookView()
+                    } label: {
+                        Image(systemName: "plus")
+                            .padding(.leading, 46)
+                            .foregroundColor(.black)
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    }
+                    
+                    showNameEmail
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.top, 10)
+                        .offset(x: -43)
+                    
+                    
+                }
+                
+                HomeView(books: Book.DummyBooks.filter { $0.username == username }, home: false)
+                    .background(ignoresSafeAreaEdges: .horizontal)
             }
-            .sheet(isPresented: $isImagePickerPresented) {
-                ImagePicker(selectedImage: self.$selectedImage)
+            .background{
+                Color(red: 248/255, green: 241/255, blue: 229/255).ignoresSafeArea()
             }
+        }
+        .toolbar{
+            
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(.black)
+                }
+            }
+        }
+        .navigationBarBackButtonHidden()
+        .sheet(isPresented: $isImagePickerPresented) {
+            ImagePicker(selectedImage: self.$selectedImage)
         }
     }
     
