@@ -39,10 +39,11 @@ struct BookItemView: View {
                             Spacer()
                             
                             NavigationLink{
-                                ProfileView(who: false)
+                                ProfileView(who: false, navigate: true)
                             }label: {
                                 displaySellerPfp
                             }
+                             
                         }
                         displayDescription
                     }

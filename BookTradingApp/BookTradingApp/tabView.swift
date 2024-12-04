@@ -46,7 +46,7 @@ struct tabView: View{
             case "Shelf":
                 BookshelfView(books: books)
             case "Profile":
-                ProfileView(who: true)
+                ProfileView(who: true, navigate: false)
             default:
                 HomeView(books: books, home: true)
             }

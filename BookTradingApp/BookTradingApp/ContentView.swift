@@ -52,7 +52,7 @@ struct ContentView: View {
                     }
                 
             case "profile":
-                ProfileView(who: true)
+                ProfileView(who: true, navigate: false)
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             Text("Profile")

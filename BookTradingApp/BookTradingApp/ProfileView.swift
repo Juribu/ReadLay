@@ -16,15 +16,17 @@ struct ProfileView: View {
     @State var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     
-    @State private var who: Bool
+    @State private var navigate: Bool
     
-    init(who: Bool){
+    let who: Bool
+    
+    init(who: Bool, navigate: Bool){
         self.who = who
+        self.navigate = navigate
     }
 
     var body: some View {
         NavigationStack{
-            
             VStack {
                 showUserHandler
                 
@@ -72,21 +74,23 @@ struct ProfileView: View {
                 Color(red: 248/255, green: 241/255, blue: 229/255).ignoresSafeArea()
             }
         }
-        .toolbar{
-            
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                        .foregroundColor(.black)
-                }
-            }
-        }
-        .navigationBarBackButtonHidden()
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(selectedImage: self.$selectedImage)
         }
+        .toolbar{
+            if navigate{
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.black)
+                    }
+                }
+    
+            }
+        }
+        .navigationBarBackButtonHidden()
     }
     
     private func showtPfpImage() -> some View {
@@ -167,7 +171,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 #Preview {
-    ProfileView(who: true)
+    ProfileView(who: true, navigate: false)
 }
 
 //Image(systemName: "star.fill")  // Using SF Symbol
