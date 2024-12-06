@@ -31,7 +31,7 @@ struct BookItemView: View {
                             .padding(.bottom, 14)
                         
                         displayBookImage
-                            .padding(.bottom, 24)
+                            .padding(.bottom, 16)
                         
                         HStack(alignment: .top){
                             displayTitleAndAuthor
@@ -113,8 +113,10 @@ struct BookItemView: View {
                 .font(.system(size: 24))
                 .multilineTextAlignment(.leading)
                 .bold()
+                .padding(.bottom, 2)
             Text("Author: " + book.author)
                 .font(.system(size: 8))
+                .padding(.bottom, 8)
         }
     }
     
@@ -125,9 +127,16 @@ struct BookItemView: View {
     }
     
     private var displayDescription: some View {
-        Text(book.description)
-            .multilineTextAlignment(.leading)
-            .font(.system(size: 12))
+        VStack(alignment: .leading){
+            Text(book.description)
+                .multilineTextAlignment(.leading)
+                .font(.system(size: 12))
+            
+            Text(book.genre)
+                .multilineTextAlignment(.leading)
+                .font(.system(size: 12))
+                .padding(.top, 16)
+        }
     }
     
     
