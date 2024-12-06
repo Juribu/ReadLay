@@ -20,7 +20,7 @@ struct HelloAgainView: View {
                 .padding(.horizontal, 50)
                 .font(.largeTitle)
             
-            Image(systemName: "book")
+            Image("appIcon")
                 .resizable()
                 .frame(width: 200, height: 200)
                 .padding(.horizontal, 50)
@@ -42,6 +42,9 @@ struct HelloAgainView: View {
                 .shadow(radius: 2)
                 .padding(.horizontal)
             Spacer()
+        }
+        .background{
+            Constants.Colors.scholarYellow.ignoresSafeArea()
         }
     }
 }

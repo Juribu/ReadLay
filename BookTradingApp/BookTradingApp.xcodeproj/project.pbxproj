@@ -20,6 +20,7 @@
 		1CF67BBC2CFA71F900CB9CA5 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BBB2CFA71F900CB9CA5 /* BookItemView.swift */; };
 		1CF67BC22CFA942E00CB9CA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67BC12CFA942E00CB9CA5 /* Book.swift */; };
 		A5157CBF2D02AFAA00E5728E /* HelloAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5157CBE2D02AFA300E5728E /* HelloAgainView.swift */; };
+		A5157CC32D02B5C500E5728E /* SetupAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5157CC22D02B5BA00E5728E /* SetupAccountView.swift */; };
 		A51996F22CFA78FA0078A85C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51996F12CFA78F70078A85C /* ProfileView.swift */; };
 		A51996F82CFA970A0078A85C /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51996F72CFA97040078A85C /* BookshelfView.swift */; };
 		A52DFA422CFBB93700001155 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52DFA412CFBB92E00001155 /* DiscoverView.swift */; };
@@ -60,6 +61,7 @@
 		1CF67BC12CFA942E00CB9CA5 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		A5157CBD2D02AF7200E5728E /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		A5157CBE2D02AFA300E5728E /* HelloAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloAgainView.swift; sourceTree = "<group>"; };
+		A5157CC22D02B5BA00E5728E /* SetupAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAccountView.swift; sourceTree = "<group>"; };
 		A51996F12CFA78F70078A85C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A51996F72CFA97040078A85C /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
 		A52DFA412CFBB92E00001155 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				A51996F72CFA97040078A85C /* BookshelfView.swift */,
 				1C3761DE2CFBD7B700214816 /* UploadBookView.swift */,
 				A5157CBE2D02AFA300E5728E /* HelloAgainView.swift */,
+				A5157CC22D02B5BA00E5728E /* SetupAccountView.swift */,
 				A51996F12CFA78F70078A85C /* ProfileView.swift */,
 				1C45FA682D02B1F10010678B /* LogInView.swift */,
 				1CF67BB92CFA71D000CB9CA5 /* HomeView.swift */,
@@ -296,6 +299,7 @@
 				A5157CBF2D02AFAA00E5728E /* HelloAgainView.swift in Sources */,
 				1C45FA692D02B1F10010678B /* LogInView.swift in Sources */,
 				1C11439A2CFF7F53002F1CD2 /* ContentView.swift in Sources */,
+				A5157CC32D02B5C500E5728E /* SetupAccountView.swift in Sources */,
 				A51996F22CFA78FA0078A85C /* ProfileView.swift in Sources */,
 				A51996F82CFA970A0078A85C /* BookshelfView.swift in Sources */,
 				1CF67B902CFA6CB700CB9CA5 /* BookTradingAppApp.swift in Sources */,
