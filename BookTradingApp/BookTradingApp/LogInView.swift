@@ -27,6 +27,39 @@ struct LogInView: View {
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding(.horizontal, 180)
+                
+                NavigationLink{
+                    HelloAgainView()
+                } label: {
+                    ZStack {
+                        Text("Log In")
+                            .foregroundStyle(.black)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .font(.system(size:20))
+                            .zIndex(1)
+                        
+                        RoundedRectangle(cornerRadius: 28)
+                            .fill(Constants.Colors.loginButton)
+                            .frame(width: 334, height: 56)
+                    }
+                }
+                
+                NavigationLink{
+                    SetupAccountView()
+                } label: {
+                    ZStack {
+                        Text("Sign up")
+                            .foregroundStyle(.black)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .font(.system(size:20))
+                            .zIndex(1)
+                        
+                        RoundedRectangle(cornerRadius: 28)
+                            .fill(Constants.Colors.signupButton)
+                            .frame(width: 334, height: 56)
+                    }
+                }
+                
                 Spacer()
             }
             .background{
