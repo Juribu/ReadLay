@@ -28,7 +28,14 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack{
             VStack {
+                NavigationLink{
+                    LogInView().navigationBarBackButtonHidden(true)
+                } label: {
+                    Text("Logout")
+                }.padding(.leading, 290)
                 showUserHandler
+                
+                
                 
                 ZStack {
                     showtPfpImage()
@@ -64,7 +71,12 @@ struct ProfileView: View {
                         .padding(.top, 10)
                         .offset(x: -43)
                     
-                    
+                    NavigationLink{
+                        FriendsView()
+                    } label: {
+                        Image("friend")
+                            .padding(.leading, -80)
+                    }
                 }
                 
                 HomeView(books: Book.DummyBooks.filter { $0.username == username }, home: false)
