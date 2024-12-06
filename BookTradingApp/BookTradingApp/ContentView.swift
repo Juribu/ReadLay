@@ -62,10 +62,10 @@ struct ContentView: View {
                     }
                 
             case "discover":
-                DiscoverView()
+                DiscoverView(cards: Book.DummyBooks)
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
-                            Text("Discover")
+                            Text("Swiper")
                                 .font(.title)
                                 .bold()
                         }

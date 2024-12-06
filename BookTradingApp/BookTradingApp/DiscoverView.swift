@@ -9,49 +9,77 @@ import SwiftUI
 
 struct DiscoverView: View {
     @State private var currentIndex = 0
-    @State private var cards = [
-        "Card 1",
-        "Card 2",
-        "Card 3",
-        "Card 4",
-        "Card 5"
-    ]
+    @State private var cards: [Book]
+    private var lastCard = Book(id: "", title: "", author: "", description: "", image: "", quote: "", genre: "", username: "")
+    
+    init(cards: [Book]) {
+        self.cards = cards
+    }
     
     var body: some View {
-        VStack{
-            Spacer()
-            
-        ZStack {
-            ForEach(cards.indices, id: \.self) { index in
-                if index >= self.currentIndex {
-                    CardView(card: self.cards[index], currentIndex: self.$currentIndex)
-                        .zIndex(Double(cards.count - index))
+        
+        ZStack{
+            Constants.Colors.scholarYellow.ignoresSafeArea()
+            VStack{
+                
+                Spacer()
+                
+                ZStack{
+                    ForEach(cards.indices, id: \.self) { index in
+                        if index >= self.currentIndex {
+                            CardView(card: self.cards[index], currentIndex: self.$currentIndex)
+                                .zIndex(Double(cards.count - index))
+                                .ignoresSafeArea()
+                                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                        } else {
+                            Text("You've explored all!")
+                        }
+                    }
                 }
-                else {
-                    Text("no cards left")
-                }
+                
+                Spacer()
             }
         }
-            
-            Spacer()
-        }
     }
+    
 }
 
 struct CardView: View {
-    var card: String
+    var card: Book
     @Binding var currentIndex: Int
     @State private var offset = CGSize.zero
     
     var body: some View {
         VStack {
-            Text(card)
-                .font(.largeTitle)
-                .padding()
-                .frame(width: 300, height: 400)
+            Spacer()
+            Image(card.image)
+                .resizable()
+                .frame(width: 233, height: 347)
                 .background(Color.white)
                 .cornerRadius(20)
                 .shadow(radius: 2)
+            
+            HStack(alignment: .top){
+                displayTitleAndAuthor(book: card)
+                
+                Spacer()
+                
+                NavigationLink{
+                    ProfileView(who: false, navigate: true)
+                }label: {
+                    displaySellerPfp
+                }
+            }
+            .padding(.horizontal, 40)
+            
+            Spacer()
+        }
+        .background{
+            LinearGradient(
+                gradient: Gradient(colors: [Constants.Colors.scholarYellow, Color(UIColor(red: 221/255, green: 178/255, blue: 110/255, alpha: 1)), Constants.Colors.scholarYellow]),
+                startPoint: .top,
+                endPoint: .bottom
+            ).ignoresSafeArea()
         }
         .offset(x: offset.width, y: offset.height)
         .gesture(
@@ -93,9 +121,42 @@ struct CardView: View {
     private func resetCardPosition() {
         self.offset = .zero
     }
+    
+    private func displayTitleAndAuthor(book: Book) -> some View {
+        VStack(alignment: .leading){
+            Text(book.title)
+                .font(.custom("Baskerville", size: 32))
+                .multilineTextAlignment(.leading)
+                .bold()
+                .padding(.bottom, 2)
+            Text(book.author)
+                .font(.system(size: 10))
+                .padding(.bottom, 12)
+            Text("\"\(book.quote)\"")
+                .font(.custom("Baskerville", size: 24))
+//                .font(.system(size: 24, weight: .medium))
+                .fontWeight(.medium)
+                .padding(.bottom)
+            
+            Text(book.description)
+                .font(.custom("Baskerville", size: 14))
+                .italic()
+                .padding(.bottom, 8)
+            Text(book.genre)
+                .font(.custom("Baskerville", size: 12))
+                .italic()
+        }
+    }
+    
+    private var displaySellerPfp: some View {
+        Image("profile")
+            .resizable()
+            .frame(width: 50, height: 50)
+    }
 }
 
 
+
 #Preview {
-    DiscoverView()
+    DiscoverView(cards: Book.DummyBooks)
 }

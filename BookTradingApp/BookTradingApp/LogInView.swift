@@ -27,10 +27,10 @@ struct LogInView: View {
                     .resizable()
                     .frame(width: 200, height: 200)
                     .padding(.horizontal, 180)
-                
                 Spacer()
-                
-                
+            }
+            .background{
+                Constants.Colors.scholarYellow.ignoresSafeArea()
             }
         }
     }

@@ -42,7 +42,7 @@ struct tabView: View{
             case "Home":
                 HomeView(books: books, home: true)
             case "Discover":
-                DiscoverView()
+                DiscoverView(cards: Book.DummyBooks)
             case "Shelf":
                 BookshelfView(books: books)
             case "Profile":
