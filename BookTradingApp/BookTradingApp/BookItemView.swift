@@ -22,7 +22,7 @@ struct BookItemView: View {
         NavigationStack{
             ZStack{
                 
-                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)).ignoresSafeArea()
+                Constants.Colors.scholarYellow.ignoresSafeArea()
 //                Color(UIColor(.white))
                 
                 ScrollView{

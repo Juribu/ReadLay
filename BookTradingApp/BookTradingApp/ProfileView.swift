@@ -71,7 +71,7 @@ struct ProfileView: View {
                     .background(ignoresSafeAreaEdges: .horizontal)
             }
             .background{
-                Color(red: 248/255, green: 241/255, blue: 229/255).ignoresSafeArea()
+                Constants.Colors.scholarYellow.ignoresSafeArea()
             }
         }
         .sheet(isPresented: $isImagePickerPresented) {

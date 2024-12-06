@@ -24,7 +24,7 @@ struct BookshelfView: View {
                     VStack(spacing: 100) {
                         ForEach(0..<numberOfRows, id: \.self) { row in
                             ZStack(alignment: .bottom){
-                                Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)).ignoresSafeArea()
+                                Constants.Colors.scholarYellow.ignoresSafeArea()
                                 
                                 HStack(spacing: 20) {
                                     ForEach(0..<3) { index in

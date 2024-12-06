@@ -38,7 +38,7 @@ struct HomeView: View {
         }
         .padding(.horizontal, 20)
         .background{
-            Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)).ignoresSafeArea()
+            Constants.Colors.scholarYellow.ignoresSafeArea()
         }
 
     }

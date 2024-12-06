@@ -20,7 +20,7 @@ struct ContentView: View {
             VStack(spacing:0){
                 contentView
                 menuView
-                    .background(Color(UIColor(red: 248/255, green: 241/255, blue: 229/255, alpha: 1)))
+                    .background(Constants.Colors.scholarYellow)
                 
             }
             .edgesIgnoringSafeArea(.bottom)
@@ -80,9 +80,9 @@ struct ContentView: View {
             Spacer()
             menuButton(icon: "house", menu: "home")
             Spacer()
-            menuButton(icon: "magnifyingglass", menu: "discover")
+            menuButton(icon: "magnifyingglass.circle", menu: "discover")
             Spacer()
-            menuButton(icon: "book", menu: "shelf")
+            menuButton(icon: "books.vertical", menu: "shelf")
             Spacer()
             menuButton(icon: "person", menu: "profile")
         }
@@ -93,7 +93,7 @@ struct ContentView: View {
         Button{
             selectedMenu = menu
         } label: {
-            Image(systemName: icon)
+            Image(systemName: selectedMenu == menu ? icon + ".fill" : icon)
                 .imageScale(.large)
                 .padding(30)
                 .foregroundColor(.black)
