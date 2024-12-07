@@ -56,26 +56,18 @@ struct ProfileView: View {
                 
                 
                 HStack{
-                    
                     NavigationLink{
                         UploadBookView()
                     } label: {
-                        Image(systemName: "plus")
-                            .padding(.leading, 46)
-                            .foregroundColor(.black)
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        Image(systemName: "plus").padding(.leading, 46).foregroundColor(.black).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     }
-                    
                     showNameEmail
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top, 10)
-                        .offset(x: -43)
+                        .frame(maxWidth: .infinity, alignment: .center).padding(.top, 10).offset(x: -43)
                     
                     NavigationLink{
                         FriendsView()
                     } label: {
                         Image("friend")
-                            .padding(.leading, -80)
                     }
                 }
                 

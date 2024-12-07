@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct HomeView: View {
     
@@ -13,7 +14,7 @@ struct HomeView: View {
     private var genres : [String] = ["All", "Romance", "Mystery", "Fantasy", "Sci-Fi", "History", "Poetry"]
     private var home : Bool
     
-    let books: [Book]
+    @State var books: [Book]
     
     init(books: [Book], home: Bool) {
         self.books = books
@@ -31,16 +32,29 @@ struct HomeView: View {
             
             
             ScrollView(.vertical){
-                ForEach(books, id: \.self) { book in
+                ForEach(selectedCategory == "All" ? books : books.filter{ $0.genre == selectedCategory } , id: \.self) { book in
                     bookInfoRow(book)
                 }
+                
             }
         }
         .padding(.horizontal, 20)
         .background{
             Constants.Colors.scholarYellow.ignoresSafeArea()
         }
+        .onAppear{
+            getAllBooks()
+        }
 
+    }
+    
+    func getAllBooks() {
+        NetworkManager.shared.fetchAllBooks { result in
+            DispatchQueue.main.async {
+                self.books = result
+            }
+        }
+        
     }
     
     

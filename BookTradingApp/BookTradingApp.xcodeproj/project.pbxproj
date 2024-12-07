@@ -13,6 +13,9 @@
 		1C3761DF2CFBD7B700214816 /* UploadBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3761DE2CFBD7B700214816 /* UploadBookView.swift */; };
 		1C45FA652D02A9200010678B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45FA642D02A9200010678B /* Constants.swift */; };
 		1C45FA692D02B1F10010678B /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45FA682D02B1F10010678B /* LogInView.swift */; };
+		1C45FA6E2D03D0690010678B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C45FA6D2D03D0690010678B /* Alamofire */; };
+		1C45FA712D03D08E0010678B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45FA702D03D08E0010678B /* NetworkManager.swift */; };
+		1C45FA742D03D4B90010678B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45FA732D03D4B90010678B /* User.swift */; };
 		1CF67B902CFA6CB700CB9CA5 /* BookTradingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */; };
 		1CF67B942CFA6CB800CB9CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */; };
 		1CF67B972CFA6CB800CB9CA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF67B962CFA6CB800CB9CA5 /* Preview Assets.xcassets */; };
@@ -51,6 +54,8 @@
 		1C3761DE2CFBD7B700214816 /* UploadBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBookView.swift; sourceTree = "<group>"; };
 		1C45FA642D02A9200010678B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C45FA682D02B1F10010678B /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		1C45FA702D03D08E0010678B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1C45FA732D03D4B90010678B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1CF67B8C2CFA6CB700CB9CA5 /* BookTradingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTradingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF67B8F2CFA6CB700CB9CA5 /* BookTradingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTradingAppApp.swift; sourceTree = "<group>"; };
 		1CF67B932CFA6CB800CB9CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C45FA6E2D03D0690010678B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,21 @@
 				1C45FA642D02A9200010678B /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1C45FA6F2D03D07F0010678B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1C45FA702D03D08E0010678B /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1C45FA722D03D4B20010678B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		1CF67B832CFA6CB700CB9CA5 = {
@@ -131,6 +152,7 @@
 				A51996F72CFA97040078A85C /* BookshelfView.swift */,
 				1C3761DE2CFBD7B700214816 /* UploadBookView.swift */,
 				A5157CBE2D02AFA300E5728E /* HelloAgainView.swift */,
+				1C45FA6F2D03D07F0010678B /* Networking */,
 				A5157CC22D02B5BA00E5728E /* SetupAccountView.swift */,
 				A51996F12CFA78F70078A85C /* ProfileView.swift */,
 				A5157CC42D02E32500E5728E /* FriendsView.swift */,
@@ -158,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				1CF67BC12CFA942E00CB9CA5 /* Book.swift */,
+				1C45FA732D03D4B90010678B /* User.swift */,
+				1C45FA722D03D4B20010678B /* New Group */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +202,9 @@
 			dependencies = (
 			);
 			name = BookTradingApp;
+			packageProductDependencies = (
+				1C45FA6D2D03D0690010678B /* Alamofire */,
+			);
 			productName = BookTradingApp;
 			productReference = 1CF67B8C2CFA6CB700CB9CA5 /* BookTradingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 1CF67B832CFA6CB700CB9CA5;
+			packageReferences = (
+				1C45FA6C2D03D0690010678B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1CF67B8D2CFA6CB700CB9CA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -302,6 +332,8 @@
 				1C45FA652D02A9200010678B /* Constants.swift in Sources */,
 				A5157CBF2D02AFAA00E5728E /* HelloAgainView.swift in Sources */,
 				1C45FA692D02B1F10010678B /* LogInView.swift in Sources */,
+				1C45FA742D03D4B90010678B /* User.swift in Sources */,
+				1C45FA712D03D08E0010678B /* NetworkManager.swift in Sources */,
 				1C11439A2CFF7F53002F1CD2 /* ContentView.swift in Sources */,
 				A5157CC32D02B5C500E5728E /* SetupAccountView.swift in Sources */,
 				A51996F22CFA78FA0078A85C /* ProfileView.swift in Sources */,
@@ -624,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C45FA6C2D03D0690010678B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C45FA6D2D03D0690010678B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C45FA6C2D03D0690010678B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1CF67B842CFA6CB700CB9CA5 /* Project object */;
 }
