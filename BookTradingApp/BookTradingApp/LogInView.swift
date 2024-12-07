@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LogInView: View {
     
-//    @Binding var userDidLogin: Bool
-    
     var body: some View {
         NavigationStack{
             VStack {
@@ -65,10 +63,11 @@ struct LogInView: View {
             .background{
                 Constants.Colors.scholarYellow.ignoresSafeArea()
             }
+            .navigationBarBackButtonHidden()
         }
     }
 }
 
-#Preview {
+#Preview{
     LogInView()
 }

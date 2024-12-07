@@ -11,7 +11,11 @@ struct BookshelfView: View {
     let books: [Book]
     
     init(books: [Book]) {
-        self.books = books
+        let likes = UserDefaults.standard.array(forKey: "likes") as? [Int] ?? []
+
+        self.books = books.filter { book in
+            likes.contains(book.id)
+        }
     }
     
     private var numberOfRows: Int {

@@ -110,24 +110,21 @@ struct SetupAccountView: View {
                             .padding(.horizontal)
                             .padding(.bottom, 20)
                     }
-                        NavigationLink{
-                            if true{
-                               ContentView()
-                                .navigationBarBackButtonHidden(true)
-                            }
-                        } label: {
-                            Text("Create")
-                        }
-                
-                        
+                    NavigationLink{
+                        ContentView()
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Text("Create")
+                            .foregroundStyle(.black)
                     }
                 }
-                .sheet(isPresented: $isImagePickerPresented) {
-                    ImagePicker(selectedImage: $selectedImage)
-                }
+            }
+            .sheet(isPresented: $isImagePickerPresented) {
+                ImagePicker(selectedImage: $selectedImage)
             }
         }
     }
+}
 
 #Preview {
     SetupAccountView()

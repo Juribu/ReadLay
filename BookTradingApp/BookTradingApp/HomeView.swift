@@ -43,7 +43,7 @@ struct HomeView: View {
             Constants.Colors.scholarYellow.ignoresSafeArea()
         }
         .onAppear{
-            getAllBooks()
+//            getAllBooks()
         }
 
     }

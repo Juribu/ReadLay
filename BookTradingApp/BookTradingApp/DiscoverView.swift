@@ -10,10 +10,14 @@ import SwiftUI
 struct DiscoverView: View {
     @State private var currentIndex = 0
     @State private var cards: [Book]
-    private var lastCard = Book(id: "", title: "", author: "", description: "", image: "", quote: "", genre: "", username: "")
+    private var lastCard = Book(id: 1, title: "", author: "", description: "", image: "", quote: "", genre: "", usernameID: 1)
     
     init(cards: [Book]) {
-        self.cards = cards
+        let likes = UserDefaults.standard.array(forKey: "likes") as? [Int] ?? []
+        
+        self.cards = cards.filter { card in
+            !likes.contains(card.id)
+        }
     }
     
     var body: some View {
@@ -40,21 +44,21 @@ struct DiscoverView: View {
                 Spacer()
             }
         }
+        
     }
-    
 }
-
 struct CardView: View {
     var card: Book
     @Binding var currentIndex: Int
     @State private var offset = CGSize.zero
+    @State private var likes: [Int] = []
     
     var body: some View {
         VStack {
             Spacer()
             Image(card.image)
                 .resizable()
-                .frame(width: 233, height: 347)
+                .frame(width: 220, height: 330)
                 .background(Color.white)
                 .cornerRadius(20)
                 .shadow(radius: 2)
@@ -95,16 +99,18 @@ struct CardView: View {
                     }
                 }
         )
+        .onAppear{
+            likes = UserDefaults.standard.array(forKey: "likes") as? [Int] ?? []
+        }
     }
+    
+    
 
     private func handleSwipe(value: DragGesture.Value) {
         if value.translation.width > 0 {
-            // Right swipe
-            
+            toggleLike()
             print("Swiped Right")
         } else {
-            // Left swipe
-            print("Swiped Left")
         }
 
         // Remove the current card from the stack
@@ -116,6 +122,16 @@ struct CardView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.currentIndex += 1
         }
+    }
+    
+    private func toggleLike() {
+        if likes.contains(card.id){
+            likes.removeAll { $0 == card.id }
+        } else {
+            likes.append(card.id)
+        }
+        
+        UserDefaults.standard.setValue(likes, forKey: "likes")
     }
 
     private func resetCardPosition() {

@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedMenu: String = "home"
     @State private var selectedCategory: String = "All"
-    @State private var likes: [String] = UserDefaults.standard.array(forKey: "likes") as? [String] ?? []
     
     let books: [Book] = Book.DummyBooks
     
@@ -24,10 +23,10 @@ struct ContentView: View {
                 
             }
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden()
         }
     }
 
-    
     private var contentView: some View{
         VStack{
             switch selectedMenu {
@@ -58,6 +57,17 @@ struct ContentView: View {
                             Text("Profile")
                                 .font(.title)
                                 .bold()
+                        }
+                    }
+                    .toolbar{
+                        ToolbarItem(placement:.topBarTrailing){
+                            NavigationLink{
+                                LogInView()
+                                    .navigationBarBackButtonHidden()
+                            } label: {
+                                Text("Logout")
+                                    .foregroundStyle(.black)
+                            }
                         }
                     }
                 

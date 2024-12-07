@@ -9,7 +9,7 @@ import SwiftUI
 
 let name = "Oshin"
 let email = "omr6@cornell.edu"
-let username = "o"
+let usernameID = 1
 
 struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
@@ -28,14 +28,8 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                NavigationLink{
-                    LogInView().navigationBarBackButtonHidden(true)
-                } label: {
-                    Text("Logout")
-                }.padding(.leading, 290)
+                
                 showUserHandler
-                
-                
                 
                 ZStack {
                     showtPfpImage()
@@ -51,9 +45,14 @@ struct ProfileView: View {
                     }
                     .offset(x: 55, y: 60)
                 }
+                .sheet(isPresented: $isImagePickerPresented) {
+                    ImagePicker(selectedImage: self.$selectedImage)
+                }
                 
                 Spacer().frame(height: 20)
                 
+                showNameEmail
+                    .frame(maxWidth: .infinity, alignment: .center)
                 
                 HStack{
                     NavigationLink{
@@ -61,25 +60,26 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "plus").padding(.leading, 46).foregroundColor(.black).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     }
-                    showNameEmail
-                        .frame(maxWidth: .infinity, alignment: .center).padding(.top, 10).offset(x: -43)
+                    
+                    Spacer()
+                    
+                    Spacer()
                     
                     NavigationLink{
                         FriendsView()
                     } label: {
                         Image("friend")
+                            .padding(.trailing, 60)
                     }
                 }
+                .padding(.bottom)
                 
-                HomeView(books: Book.DummyBooks.filter { $0.username == username }, home: false)
+                HomeView(books: Book.DummyBooks.filter { $0.usernameID == usernameID }, home: false)
                     .background(ignoresSafeAreaEdges: .horizontal)
             }
             .background{
                 Constants.Colors.scholarYellow.ignoresSafeArea()
             }
-        }
-        .sheet(isPresented: $isImagePickerPresented) {
-            ImagePicker(selectedImage: self.$selectedImage)
         }
         .toolbar{
             if navigate{
@@ -111,7 +111,7 @@ struct ProfileView: View {
     
     
     private var showUserHandler: some View {
-        Text("@" + String(username))
+        Text("@" + String(usernameID))
             .foregroundColor(.black)
             .bold()
             .font(.title2)
@@ -177,8 +177,3 @@ struct ImagePicker: UIViewControllerRepresentable {
 #Preview {
     ProfileView(who: true, navigate: false)
 }
-
-//Image(systemName: "star.fill")  // Using SF Symbol
-//    .resizable()                // Make the image resizable
-//.frame(width: 100, height: 100)  // Set the desired width and height
-//    .foregroundColor(.yellow)

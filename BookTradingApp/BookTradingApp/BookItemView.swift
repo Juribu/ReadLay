@@ -12,7 +12,7 @@ struct BookItemView: View {
     @Environment(\.dismiss) var dismiss
     
     let book: Book
-    @State private var likes: [String] = []
+    @State private var likes: [Int] = []
     
     init(book: Book) {
         self.book = book
@@ -21,7 +21,6 @@ struct BookItemView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                
                 Constants.Colors.scholarYellow.ignoresSafeArea()
 //                Color(UIColor(.white))
                 
@@ -76,7 +75,7 @@ struct BookItemView: View {
             }
             .navigationBarBackButtonHidden()
             .onAppear{
-                likes = UserDefaults.standard.array(forKey: "likes") as? [String] ?? []
+                likes = UserDefaults.standard.array(forKey: "likes") as? [Int] ?? []
         }
     }
     
