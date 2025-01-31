@@ -63,7 +63,6 @@ struct LogInView: View {
             .background{
                 Constants.Colors.scholarYellow.ignoresSafeArea()
             }
-            .navigationBarBackButtonHidden()
         }
     }
 }

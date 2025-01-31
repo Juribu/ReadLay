@@ -18,8 +18,8 @@ struct Friend {
 struct FriendsView: View {
     // Sample dictionary for friends (replace with actual data source)
     let friends: [String: Friend] = [
-        "John" : Friend(book1: "harryPotter", book2: "harryPotter", username: "JohnDoe", email: "johndoe@gmail.com"),
-        "bon" : Friend(book1: "harryPotter", book2: "harryPotter", username: "JohnDoe", email: "johndoe@gmail.com")
+        "John" : Friend(book1: "catcherRye", book2: "wilderGirls", username: "JohnDoe", email: "johndoe@gmail.com"),
+        "bon" : Friend(book1: "harryPotter", book2: "theGreatGatsby", username: "JohnDoe", email: "johndoe@gmail.com")
     ]
     
     let gridItems = [GridItem(.flexible())]

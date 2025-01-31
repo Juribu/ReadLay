@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-let name = "Oshin"
-let email = "omr6@cornell.edu"
+let name = "Jay!"
+let email = "jz2384@cornell.edu"
 let usernameID = 1
 
 struct ProfileView: View {
