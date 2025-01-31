@@ -1,3 +1,3 @@
 # BookTradingApp
 
-[![Video Title](https://img.youtube.com/vi/DkCezKi9jGo/0.jpg)](https://www.youtube.com/watch?v=DkCezKi9jGo)
+[![Video Title]((https://raw.githubusercontent.com/Juribu/ReadLay/Thumbnail))](https://www.youtube.com/watch?v=DkCezKi9jGo)
