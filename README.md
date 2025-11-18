@@ -34,6 +34,11 @@
 git clone https://github.com/Juribu/ReadLay.git
 ```
 
+
+
+## Video demo
+https://www.youtube.com/watch?v=DkCezKi9jGo
+
 ## Contribute
 
 We would love you for the contribution to **ReadLay**, check the ``LICENSE`` file for more info.
@@ -42,7 +47,7 @@ We would love you for the contribution to **ReadLay**, check the ``LICENSE`` fil
 
 Jay Zheng – [@Linkedin]([https://link](https://www.linkedin.com/in/jaywprofile/)) – jidong.1272@gmail[dot]com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+<!-- Distributed under the XYZ license. See ``LICENSE`` for more information. -->
 
 [juribu.github.io](https://juribu.github.io)
 
@@ -54,14 +59,3 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [codebeat-image]: https://codebeat.co/badges/c19b47ea-2f9d-45df-8458-b2d952fe9dad
 [codebeat-url]: https://codebeat.co/projects/github-com-vsouza-awesomeios-com
 
-
-#TODO
-- App Name
-- App Tagline: short one-liner description
-- Link(s) to backend
-- screenshots of app (highlight important features)
-- A short description of app (its purpose and features)
-- A list technical side of app
-
-## Video
-https://www.youtube.com/watch?v=DkCezKi9jGo
