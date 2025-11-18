@@ -10,7 +10,7 @@
   <img width="144" height="143" alt="image" src="https://github.com/user-attachments/assets/c6e7991e-b06c-4f73-b6f1-8810493cf249" />
   </a>
   <p align="center">
-    This is our first ever iOS project! An app for book trading, where people can trade books they have finished reading with others for books they have not yet read. and searching for genres, books near me, etc.
+    This is our first ever iOS project through a hackathon! An app for book trading, where people can trade books they have finished reading with others for books they have not yet read. and searching for genres, books near me, etc.
 
   </p>
 </p>
