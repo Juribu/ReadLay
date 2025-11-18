@@ -1,7 +1,12 @@
 # ReadLay
 
-vvv **Click on imge below to get redirrected to video!!!** vvv
+#TODO
+- App Name
+- App Tagline: short one-liner description
+- Link(s) to backend
+- screenshots of app (highlight important features)
+- A short description of app (its purpose and features)
+- A list technical side of app
 
-<a href="https://www.youtube.com/watch?v=DkCezKi9jGo" target="_blank">
-    <img src="https://raw.githubusercontent.com/Juribu/ReadLay/main/assets/Thumbnail.png" width="300" alt="Video Thumbnail">
-</a>
+## Video
+https://www.youtube.com/watch?v=DkCezKi9jGo
