@@ -1,8 +1,6 @@
-
-# ReadLay
 [![Contributors][contributors-shield]][contributors-url]
+
 [![Swift Version][swift-image]][swift-url]
-[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 <!--[![License][license-image]][license-url]-->
 
@@ -55,8 +53,8 @@ Don't forget to give the project a star! Thanks again!
 
 ### Top contributors:
 
-<a href="https://github.com/cuappdev/hustle-ios/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=cuappdev/hustle-ios" alt="contrib.rocks image" />
+<a href="https://github.com/juribu/readlay/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=juribu/readlay" alt="contrib.rocks image" />
 </a>
 
 
@@ -72,6 +70,6 @@ Don't forget to give the project a star! Thanks again!
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [codebeat-image]: https://codebeat.co/badges/c19b47ea-2f9d-45df-8458-b2d952fe9dad
 [codebeat-url]: https://codebeat.co/projects/github-com-vsouza-awesomeios-com
-[contributors-shield]: https://img.shields.io/github/contributors/cuappdev/hustle-ios.svg?style=for-the-badge
-[contributors-url]: https://github.com/cuappdev/hustle-ios/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/juribu/readlay.svg?style=for-the-badge
+[contributors-url]: https://github.com/juribu/readlay/graphs/contributors
 
