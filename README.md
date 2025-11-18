@@ -17,10 +17,11 @@
 
 
 ## Features
-
+- [x] Filtering books by genre
 - [x] Liking books (added to book shelf)
 - [x] Swiping to add books to bookshelf (similar to dataing apps) #user-engagement
 - [x] book shelf that stores liked books
+
 
 ## Requirements
 
