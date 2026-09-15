@@ -4,6 +4,12 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 <!--[![License][license-image]][license-url]-->
 
+
+
+## Video demo
+https://www.youtube.com/watch?v=DkCezKi9jGo
+
+
 # ReadLay
 <br />
 <p align="center">
@@ -33,10 +39,6 @@
 git clone https://github.com/Juribu/ReadLay.git
 ```
 
-
-
-## Video demo
-https://www.youtube.com/watch?v=DkCezKi9jGo
 
 <!-- CONTRIBUTING -->
 ## Contributing
